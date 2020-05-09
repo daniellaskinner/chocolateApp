@@ -1,15 +1,60 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+// import Navbar from './Components/Navbar/navbar';
+import ChocolateCalc from './Components/ChocolateCalc/ChocolateCalc';
+
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+
+//ROUTING TASK
+import Users from './Components/Users/Users';
+import Contact from './Components/Contact/Contact';
+import NotFound from './Components/NotFound/NotFound';
+import App from './App';
+
+//grab the stuff out the package you need, alias browser router
+import {Route, Link, BrowserRouter as Router, Switch} from 'react-router-dom';
+
+
+//routing component
+class Routing extends React.Component {
+    render() {
+        return (
+            <Router>
+                <div>
+                    <ul>
+                        <li>
+                            <Link to="/">Home</Link>
+                        </li>
+                        <li>
+                            <Link to="/users">Users</Link>
+                        </li>
+                        <li>
+                            <Link to="/contact">Contact</Link>
+                        </li>
+                        <li>
+                            <Link to="/choc">Chocolate Calculator</Link>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    {/*switch doing a switch conditional statement so if none of the URL found will use the one with no path specified*/}
+                    <Switch>
+                        <Route exact path="/" component={App}/>
+                        <Route path="/users" component={Users}/>
+                        <Route path="/contact" component={Contact}/>
+                        <Route path="/choc" component={ChocolateCalc}/>
+                        <Route component={NotFound}/>
+                    </Switch>
+                </div>
+            </Router>
+        );
+    };
+}
+
+ReactDOM.render(<Routing/>, document.getElementById('root'));
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
