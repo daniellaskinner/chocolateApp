@@ -8,10 +8,10 @@ import * as serviceWorker from './serviceWorker';
 
 
 //ROUTING TASK
+import Homepage from './Components/Homepage/Homepage';
 import Users from './Components/Users/Users';
 import Contact from './Components/Contact/Contact';
 import NotFound from './Components/NotFound/NotFound';
-import App from './App';
 
 //grab the stuff out the package you need, alias browser router
 import {Route, Link, BrowserRouter as Router, Switch} from 'react-router-dom';
@@ -41,7 +41,7 @@ class Routing extends React.Component {
                 <div>
                     {/*switch doing a switch conditional statement so if none of the URL found will use the one with no path specified*/}
                     <Switch>
-                        <Route exact path="/" component={App}/>
+                        <Route exact path="/" component={Homepage}/>
                         <Route path="/users" component={Users}/>
                         <Route path="/contact" component={Contact}/>
                         <Route path="/choc" component={ChocolateCalc}/>
