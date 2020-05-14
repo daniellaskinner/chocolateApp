@@ -1,26 +1,18 @@
 import React from 'react';
-import './ChocShop.css';
+import Product from './Product/Product';
+import Total from './Total/Total';
 
-class ChocShop extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {qty: 0};
-  }
-
-  handleClick = () => {
-    this.setState({qty: this.state.qty + 1});
-  }
-
+class ChocShop extends React.Component{
   render() {
-    return (
+    return(
       <div>
-        <h2>This is the chocolate shop!</h2>
-        <p>Crunchie - 60p</p>
-        <button onClick = {this.handleClick}>Buy</button>
-        <h3>Quantity: {this.state.qty} bar(s)</h3>
+        <Product/>
+        <Product/>
+        <Product/>
+        <Total/>
       </div>
-    )
-  }
-}
+    );
+  };
+};
 
 export default ChocShop;
