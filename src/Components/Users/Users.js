@@ -1,5 +1,4 @@
 import React from 'react';
-import ChocolateCalc from "../ChocolateCalc/ChocolateCalc";
 
 class Users extends React.Component {
     render() {

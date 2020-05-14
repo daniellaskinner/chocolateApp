@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 // import Navbar from './Components/Navbar/navbar';
 import ChocolateCalc from './Components/ChocolateCalc/ChocolateCalc';
+import ChocShop from './Components/ChocShop/ChocShop';
 
 import * as serviceWorker from './serviceWorker';
 
@@ -36,6 +37,9 @@ class Routing extends React.Component {
                         <li>
                             <Link to="/choc">Chocolate Calculator</Link>
                         </li>
+                        <li>
+                            <Link to="/chocshop">Choc Shop</Link>
+                        </li>
                     </ul>
                 </div>
                 <div>
@@ -45,6 +49,7 @@ class Routing extends React.Component {
                         <Route path="/users" component={Users}/>
                         <Route path="/contact" component={Contact}/>
                         <Route path="/choc" component={ChocolateCalc}/>
+                        <Route path="/chocshop" component={ChocShop}/>
                         <Route component={NotFound}/>
                     </Switch>
                 </div>
