@@ -1,5 +1,5 @@
 import React from 'react';
-// import './Product.css';
+import './Product.css';
 
 class Product extends React.Component {
   constructor(props) {
@@ -13,9 +13,8 @@ class Product extends React.Component {
 
   render() {
     return (
-      <div>
-        <h2>This is the chocolate shop!</h2>
-        <p>Crunchie - 60p</p>
+      <div className="chocProduct">
+        <p>{this.props.name} - {this.props.price}p</p>
         <button onClick = {this.handleClick}>Buy</button>
         <h3>Quantity: {this.state.qty} bar(s)</h3>
       </div>
