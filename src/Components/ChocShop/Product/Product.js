@@ -19,7 +19,7 @@ class Product extends React.Component {
   render() {
     return (
       <div className="chocProduct">
-        <p>{this.props.name} - £{this.props.price.toFixed(2)}</p>
+        <p>{this.props.name} - £{this.props.price}</p>
         <img src={this.props.image} className="chocImage"/>
         <button onClick = {this.buy}>Buy</button>
         <button onClick = {this.show}>Show</button>

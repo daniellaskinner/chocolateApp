@@ -19,12 +19,19 @@ class ChocShop extends React.Component{
   };
 
   calculateTotal = (price) => {
-    this.setState({total: this.state.total + price});
+    this.setState({total: this.state.total + parseFloat(price)});
   };
 
   showProduct = (name) => {
     alert("You selected " + name)
   };
+
+  createProduct = (product) => {
+    this.setState({
+      //concat adds a new product into an existing array
+      products: this.state.products.concat(product)
+    })
+  }
 
   render() {
     //loop through all the chocbar products that are stored in local chocshop state
@@ -45,7 +52,7 @@ class ChocShop extends React.Component{
         <h2>This is the chocolate shop!</h2>
         {chocBars}
         <Total total={this.state.total}/>
-        <ProductForm/>
+        <ProductForm handleCreate={this.createProduct}/>
       </div>
     );
   };

@@ -5,7 +5,13 @@ class ProductForm extends React.Component{
     e.preventDefault();
 
     //use the ref attribute in the input to know where to get the value from
-    alert('name: ' + this.refs.name.value + ' - £' + this.refs.price.value);
+    let product = {
+      name: this.refs.name.value,
+      price: parseFloat(this.refs.price.value)
+    }
+
+    this.props.handleCreate(product);
+
     this.refs.name.value="";
     this.refs.price.value="";
   }
