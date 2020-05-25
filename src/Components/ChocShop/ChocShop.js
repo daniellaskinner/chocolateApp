@@ -1,6 +1,7 @@
 import React from 'react';
 import Product from './Product/Product';
 import Total from './Total/Total';
+import ProductForm from './ProductForm/ProductForm';
 import './ChocShop.css';
 
 class ChocShop extends React.Component{
@@ -44,6 +45,7 @@ class ChocShop extends React.Component{
         <h2>This is the chocolate shop!</h2>
         {chocBars}
         <Total total={this.state.total}/>
+        <ProductForm/>
       </div>
     );
   };
