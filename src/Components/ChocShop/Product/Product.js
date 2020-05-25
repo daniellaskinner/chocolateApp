@@ -7,8 +7,9 @@ class Product extends React.Component {
     this.state = {qty: 0};
   };
 
-  handleClick = () => {
+  buy = () => {
     this.setState({qty: this.state.qty + 1});
+    this.props.handleTotal(this.props.price);
   };
 
   show = () => {
@@ -18,8 +19,9 @@ class Product extends React.Component {
   render() {
     return (
       <div className="chocProduct">
-        <p>{this.props.name} - {this.props.price}p</p>
-        <button onClick = {this.handleClick}>Buy</button>
+        <p>{this.props.name} - £{this.props.price.toFixed(2)}</p>
+        <img src={this.props.image} className="chocImage"/>
+        <button onClick = {this.buy}>Buy</button>
         <button onClick = {this.show}>Show</button>
         <h3>Quantity: {this.state.qty} bar(s)</h3>
       </div>
