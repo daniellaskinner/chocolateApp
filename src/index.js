@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 // import Navbar from './Components/Navbar/navbar';
 import ChocolateCalc from './Components/ChocolateCalc/ChocolateCalc';
+import ChocShop from './Components/ChocShop/ChocShop';
 
 import * as serviceWorker from './serviceWorker';
 
@@ -22,7 +23,7 @@ class Routing extends React.Component {
     render() {
         return (
             <Router>
-                <div>
+                <nav>
                     <ul>
                         <li>
                             <Link to="/">Home</Link>
@@ -34,10 +35,13 @@ class Routing extends React.Component {
                             <Link to="/contact">Contact</Link>
                         </li>
                         <li>
-                            <Link to="/choc">Chocolate Calculator</Link>
+                            <Link to="/choc">Bitcoin Chocolate Calculator</Link>
+                        </li>
+                        <li>
+                            <Link to="/chocshop">Choc Shop</Link>
                         </li>
                     </ul>
-                </div>
+                </nav>
                 <div>
                     {/*switch doing a switch conditional statement so if none of the URL found will use the one with no path specified*/}
                     <Switch>
@@ -45,6 +49,7 @@ class Routing extends React.Component {
                         <Route path="/users" component={Users}/>
                         <Route path="/contact" component={Contact}/>
                         <Route path="/choc" component={ChocolateCalc}/>
+                        <Route path="/chocshop" component={ChocShop}/>
                         <Route component={NotFound}/>
                     </Switch>
                 </div>
